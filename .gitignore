@@ -2,4 +2,4 @@ node_modules
 session
 .env.*
 NOTE.txt
-bun.lockb
+bun.lock*
