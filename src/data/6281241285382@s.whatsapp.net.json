@@ -1,0 +1,21 @@
+{
+  "senderId": "6281241285382@s.whatsapp.net",
+  "phoneNumber": "6281241285382",
+  "currentStage": "OLD_PATIENT_VERIFY",
+  "answers": [
+    {
+      "stage": "CHECK_STATUS",
+      "question": "Apakah Anda pasien *lama* atau *baru*?",
+      "answer": null,
+      "timestamp": "2025-04-17T17:16:13.331Z"
+    },
+    {
+      "stage": "CHECK_STATUS",
+      "question": "Silakan masukkan nomor rekam medis atau NIK dan tanggal lahir. format: (Nomor Rekam Medis/NIK)|dd-mm-yyyy",
+      "answer": null,
+      "timestamp": "2025-04-17T17:16:13.920Z"
+    }
+  ],
+  "createdAt": "2025-04-17T17:16:13.330Z",
+  "updatedAt": "2025-04-17T17:16:13.920Z"
+}

@@ -1,20 +1,30 @@
-const RegistrationStage = {
-    START: 'start_registration',
-    EMAIL_ENTERED: 'email_entered',
-    EMAIL_VERIFIED: 'email_verified',
-    PASSWORD_CREATED: 'password_created',
-    PROFILE_COMPLETED: 'profile_completed',
-    REGISTRATION_COMPLETED: 'registration_completed',
-  };
+import { RegistrationStage } from 'types/stage';
 
-  const RegistrationStatus = {
-    INITIATED: 'initiated',
-    IN_PROGRESS: 'in_progress',
-    SUCCESS: 'success',
-    FAILED: 'failed',
-  };
+const LIST_STAGES = [
+	'INITIALIZING',
+	'CHECK_STATUS',
+	'OLD_PATIENT_VERIFY',
+	'NEW_PATIENT_BASIC',
+	'IDENTITY_FORM',
+	'PAYMENT_METHOD',
+	'BPJS_REFERRAL',
+	'VISIT_SCHEDULE',
+	'DOCTOR_SELECTION',
+	'CONFIRMATION',
+	'DONE',
+];
 
-  module.exports = {
-    RegistrationStage,
-    RegistrationStatus,
-  };
+const stagesConverter = (stages: RegistrationStage): number => {
+	return LIST_STAGES.findIndex((stage) => stage === stages);
+};
+
+const getNextStage = (stages: RegistrationStage): RegistrationStage => {
+	const currentStageIndex = LIST_STAGES.findIndex((stage) => stage === stages);
+	return LIST_STAGES[currentStageIndex + 1] as RegistrationStage;
+};
+
+const getCurrentStage = (stages: RegistrationStage): string | undefined => {
+	return LIST_STAGES.find((stage) => stage === stages);
+};
+
+export { stagesConverter, getNextStage, getCurrentStage };
